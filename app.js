@@ -1,9 +1,16 @@
-const http = require('http');
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write('Hello World!');
-  res.end();
-}).listen(3000); // <-- changed from 8080 to 3000
+ const condition = true;
+ const myPromise = new Promise((resolve, reject) => {
+   if(condition){ resolve('Success!'); } else { reject('Failure!'); }
+ });
 
-console.log('Server running on port 3000');
+ async function myFunction() {
+   try {
+     const result = await myPromise;
+     console.log(result);
+   } catch (error) {
+    console.log(error);
+  }
+}
+ myFunction();
+
