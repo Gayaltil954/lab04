@@ -12,5 +12,6 @@
     console.log(error);
   }
 }
- myFunction();
 
+
+ myFunction();
